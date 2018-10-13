@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "notes", "notes\notes.csproj", "{2C8D5E92-19CD-499C-916D-BCB41FBC42FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "notes", "Source\notes\notes.csproj", "{2C8D5E92-19CD-499C-916D-BCB41FBC42FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "notesRPM", "notesRPM\notesRPM.csproj", "{8B2F9614-11C3-45E3-AA5C-FBEDBFDA3B2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "notesRPM", "Source\notesRPM\notesRPM.csproj", "{8B2F9614-11C3-45E3-AA5C-FBEDBFDA3B2D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{2C8D5E92-19CD-499C-916D-BCB41FBC42FC} = {2C8D5E92-19CD-499C-916D-BCB41FBC42FC}
 	EndProjectSection

@@ -6,6 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2C8D5E92-19CD-499C-916D-BCB41FBC42FC}</ProjectGuid>
     <OutputType>Library</OutputType>
+    <BaseIntermediateOutputPath>..\..\obj</BaseIntermediateOutputPath>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>notes</RootNamespace>
     <AssemblyName>notes</AssemblyName>
@@ -19,7 +20,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -29,7 +30,7 @@
     <DebugType>
     </DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>3</WarningLevel>
@@ -64,58 +65,22 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AssemblyVersion.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AssemblyVersion.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RegisterToolbar.cs" />
     <Compile Include="toolbarwrapper.cs" />
     <Compile Include="notes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>R:\KSP_1.4.3_dev\KSP_x64_Data\Managed\Assembly-CSharp.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="ToolbarControl">
-      <HintPath>R:\KSP_1.4.3_dev\GameData\001_ToolbarControl\Plugins\ToolbarControl.dll</HintPath>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\LIB\managed\1.4.1\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>R:\KSP_1.4.3_dev\KSP_x64_Data\Managed\UnityEngine.dll</HintPath>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\LIB\managed\1.4.1\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>R:\KSP_1.4.3_dev\KSP_x64_Data\Managed\UnityEngine.UI.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="AssemblyVersion.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AssemblyVersion.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>rem copy /y $(TargetPath) "$(SolutionDir)\GameData\notes\Plugins\"
-
-start /D D:\Users\jbb\github\ksp_notes /WAIT deploy.bat  $(TargetDir) $(TargetFileName)
-
-if $(ConfigurationName) == Release (
-	start /D D:\Users\jbb\github\ksp_notes /WAIT buildRelease.bat $(TargetDir) $(TargetFileName)
-)</PostBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PreBuildEvent>
-set textTemplatingPath="%25ProgramFiles(x86)%25\Microsoft Visual Studio\2017\Community\Common7\IDE\texttransform.exe"
-
-%25textTemplatingPath%25 "$(ProjectDir)AssemblyVersion.tt"
-</PreBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
